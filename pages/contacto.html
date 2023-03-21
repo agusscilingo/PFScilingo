@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latin Geisha</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- titulo -->
+
+    <div class="tittle">
+        <img class="loguito" src="../img/logos/logo png.png" alt="loguito" height="120 wi
+        120">
+    </div>
+
+    <!-- navegacion-->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">INICIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../pages/remeras.html">REMERAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/buzos.html">BUZOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/gorrxs.html">GORRXS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/tazas.html">TAZAS</a>
+                    </li>
+                </ul>
+
+                <span class="navbar-text">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MAYORISTA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/contacto.html">CONTACTO</a>
+                        </li>
+                </span>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- barra latin geisha -->
+
+    <div class="col-xs-12">
+        <h1 id="barra">Contacto</h1>
+    </div>
+
+    <div class="contact_form">
+
+        <div class="formulario">
+
+            <form action="submeter-formulario.php" method="post">
+
+
+                <p>
+                    <label for="nombre" class="colocar_nombre">Nombre
+
+                    </label>
+                    <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre">
+                </p>
+
+                <p>
+                    <label for="email" class="colocar_email">Email
+
+                    </label>
+                    <input type="email" name="introducir_email" id="email" placeholder="Escribe tu Email">
+                </p>
+
+                <p>
+                    <label for="telefono" class="colocar_telefono">Teléfono
+                    </label>
+                    <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                </p>
+
+                <p>
+                    <label for="mensaje" class="colocar_mensaje">Mensaje
+
+                    </label>
+                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje"
+                        placeholder="Deja aquí tu comentario..."></textarea>
+                </p>
+
+                <button type="submit" name="enviar_formulario" id="enviar">
+                    <p>Enviar</p>
+                </button>
+
+
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
