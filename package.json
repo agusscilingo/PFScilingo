@@ -7,13 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "node-sass --include-path scss scss/style.scss css/style.css",
     "watch-sass": "nodemon -e scss -x  \"npm run build-sass\""
-    
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
   }
 }
-

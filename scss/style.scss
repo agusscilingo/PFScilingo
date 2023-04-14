@@ -7,42 +7,68 @@
 .tittle {
     @extend.starlight;
     font-size: 70px;
-    background-color: black;    
+    background-color: black;
+    margin-bottom: 0;
 }
 
 //navbar
 
 .navbar {
-    background-color: #AE9B8C;  
+    background-color: #AE9B8C;
 }
 
+//animacion
 
+.nav-link {
+    transform: scale(1);
+    transition:0.4s ease;
+}
+.nav-link:hover{
+    transform: scale(1.2);
+    transition: all 0.4s ease;
+}
 
+@media screen and (max-width:800px){
+    .nav-link {
+        transform: scale(0.9);
+        transition:0.4s ease;
+    }
+    .nav-link:hover{
+        transform: scale(1);
+        transition:0.4s ease;
+    }
+}
+
+//barra 
 
 #barra {
     background-color: $black;
     @extend.starlight;
-    font-size: 65px;
+    font-size: 90px;
     margin-top: 0;
 
 }
+
 
 //imagenes
 
 .row {
     text-align: center;
+}
+
+
+.card-body {
     background-color: $black;
 }
 
-.card {
-    &body {
-        background-color: #820E11;
-    }
 
-    &title {
-        color: #AE9B8C;
-    }
+.card-title {
+    text-decoration: none;
+    font-family: 'Caveat', sans-serif;
+    font-size: 3vh;
 }
+
+
 
 //footer
 .footer {
@@ -77,14 +103,19 @@
 
 //contacto
 
+body {
+    background-image: url(../img/logos/aber.png);
+    background-repeat: repeat;
+}
+
 .contact_form {
-    width: 460px;
+    width: 600px;
     height: auto;
-    margin: 80px auto;
+    margin: 50px auto;
     border-radius: 10px;
     padding-top: 30px;
     padding-bottom: 20px;
-    background-color: #820E11;
+    background-color: $black;
     padding-left: 30px;
 
     input {
@@ -97,6 +128,7 @@
         border-color: #AE9B8C;
         padding-left: 10px;
         margin-bottom: 20px;
+        float: center;
     }
 
 
@@ -111,38 +143,51 @@
         padding-left: 10px;
         margin-bottom: 20px;
         padding-top: 15px;
+        float: center;
     }
 
 
     label {
         display: block;
-        float: center;
+        text-align: center;
     }
 
-
     button {
+        height: auto;
+        width: 550px;
         @extend.guias;
-        height: 45px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        background-color: $black;
-        border-color: $black;
+        background-color: #AE9B8C;
+        border-color: black;
         border-radius: 10px;
-        width: 420px;
         cursor: pointer;
     }
 
     button p {
-        color: #fff;
-        font-size: 30px;
-        font-family: 'Noto', cursive;
-    }
 
+        color: #820E11;
+        font-size: 40px;
+        font-family: 'Caveat', cursive;
+        margin: auto;
+        padding: 0%;
+    }
 
     p {
-        font-size: 14px;
-        color: $black;
+        font-size: 30px;
+        color: #AE9B8C;
+        text-align: center;
+        font-family: 'Caveat', cursive;
     }
+}
+
+@media screen and (max-width:800px) {
+
+    .contact_form {
+        width: 100%;
+
+        button {
+            width: 95%;
+        }
+
+    }
+
 }

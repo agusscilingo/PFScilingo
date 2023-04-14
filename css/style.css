@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@300&display=swap");
 .starlight, .tittle, #barra {
   color: #AE9B8C;
   font-family: 'babylonica', cursive;
@@ -12,25 +13,43 @@
 
 .tittle {
   font-size: 70px;
-  background-color: black; }
+  background-color: black;
+  margin-bottom: 0; }
 
 .navbar {
   background-color: #AE9B8C; }
 
+.nav-link {
+  transform: scale(1);
+  transition: 0.4s ease; }
+
+.nav-link:hover {
+  transform: scale(1.2);
+  transition: all 0.4s ease; }
+
+@media screen and (max-width: 800px) {
+  .nav-link {
+    transform: scale(0.9);
+    transition: 0.4s ease; }
+  .nav-link:hover {
+    transform: scale(1);
+    transition: 0.4s ease; } }
+
 #barra {
   background-color: black;
-  font-size: 65px;
+  font-size: 90px;
   margin-top: 0; }
 
 .row {
-  text-align: center;
+  text-align: center; }
+
+.card-body {
   background-color: black; }
 
-.cardbody {
-  background-color: #820E11; }
-
-.cardtitle {
-  color: #AE9B8C; }
+.card-title {
+  text-decoration: none;
+  font-family: 'Caveat', sans-serif;
+  font-size: 3vh; }
 
 .footer {
   background-color: black;
@@ -55,14 +74,18 @@
     grid-gap: 30px;
     padding: 10px 0px; } }
 
+body {
+  background-image: url(../img/logos/aber.png);
+  background-repeat: repeat; }
+
 .contact_form {
-  width: 460px;
+  width: 600px;
   height: auto;
-  margin: 80px auto;
+  margin: 50px auto;
   border-radius: 10px;
   padding-top: 30px;
   padding-bottom: 20px;
-  background-color: #820E11;
+  background-color: black;
   padding-left: 30px; }
   .contact_form input {
     background-color: #fbfbfb;
@@ -72,7 +95,8 @@
     border-width: 1px;
     border-color: #AE9B8C;
     padding-left: 10px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    float: center; }
   .contact_form textarea {
     background-color: #fbfbfb;
     width: 405px;
@@ -82,25 +106,32 @@
     border-color: black;
     padding-left: 10px;
     margin-bottom: 20px;
-    padding-top: 15px; }
+    padding-top: 15px;
+    float: center; }
   .contact_form label {
     display: block;
-    float: center; }
+    text-align: center; }
   .contact_form button {
-    height: 45px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    background-color: black;
+    height: auto;
+    width: 550px;
+    background-color: #AE9B8C;
     border-color: black;
     border-radius: 10px;
-    width: 420px;
     cursor: pointer; }
   .contact_form button p {
-    color: #fff;
-    font-size: 30px;
-    font-family: 'Noto', cursive; }
+    color: #820E11;
+    font-size: 40px;
+    font-family: 'Caveat', cursive;
+    margin: auto;
+    padding: 0%; }
   .contact_form p {
-    font-size: 14px;
-    color: black; }
+    font-size: 30px;
+    color: #AE9B8C;
+    text-align: center;
+    font-family: 'Caveat', cursive; }
+
+@media screen and (max-width: 800px) {
+  .contact_form {
+    width: 100%; }
+    .contact_form button {
+      width: 95%; } }
