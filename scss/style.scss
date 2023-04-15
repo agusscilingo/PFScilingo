@@ -21,21 +21,23 @@
 
 .nav-link {
     transform: scale(1);
-    transition:0.4s ease;
+    transition: 0.4s ease;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     transform: scale(1.2);
     transition: all 0.4s ease;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:800px) {
     .nav-link {
         transform: scale(0.9);
-        transition:0.4s ease;
+        transition: 0.4s ease;
     }
-    .nav-link:hover{
+
+    .nav-link:hover {
         transform: scale(1);
-        transition:0.4s ease;
+        transition: 0.4s ease;
     }
 }
 
@@ -47,6 +49,18 @@
     font-size: 90px;
     margin-top: 0;
 
+}
+
+@media screen and (max-width:800px) {
+    #barra {
+        background-color: $black;
+        color: #AE9B8C;
+        font-family: 'babylonica', cursive;
+        text-align: center;
+        font-size: 50px;
+        margin-top: 0;
+
+    }
 }
 
 
