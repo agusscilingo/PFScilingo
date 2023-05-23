@@ -1,28 +1,32 @@
 let nombre = prompt('Hola, coloque su nombre por favor');
 let confirmar = confirm('Bienvedidx ' + nombre);
 
-let edad = ('25');
-console.log(edad);
+//algoritmo
 
-let categoria = ('Buzos');
+let categoria = prompt('¿Qué categoría quieres escoger?: \n Remeras \n Buzos \n Tazas \n Gorrxs');
 switch (categoria) {
     case 'Remeras':
-        alert ('Elegiste la sección remeras')
+        alert('Elegiste la sección Remeras')
         break;
     case 'Buzos':
-        alert('Elegiste la sección buzos')
+        alert('Elegiste la sección Buzos')
         break;
     case 'Tazas':
-        alert('Elegiste la sección tazas')
+        alert('Elegiste la sección Tazas')
         break;
     case 'Gorrxs':
-        alert('Elegiste la sección gorrxs')
+        alert('Elegiste la sección Gorrxs')
+        break;
+    default:
+        alert('No escogiste ninguna categoría')
         break;
 }
 
- function carrito (){
-    const rem= prompt("¿Cuántos buzos negros quieres llevar?")
-    const remdos=prompt('¿Cuántos buzos blancos quieres llevar?')
-    return total= alert('Se han añadido al carrito ' + rem + ' buzos negros y ' + remdos + ' buzos blancos')
- }
- console.log(carrito())
+//funcion
+
+function carrito() {
+    const rem = prompt("¿Cuántos artículos de color negro quieres llevar?");
+    const remdos = prompt('¿Cuántos artículos de color blanco quieres llevar?');
+    return ('Se han añadido al carrito ' + rem + ' articulos negros y ' + remdos + ' articulos blancos');
+}
+console.log(carrito())
