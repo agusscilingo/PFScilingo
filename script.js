@@ -1,32 +1,69 @@
-let nombre = prompt('Hola, coloque su nombre por favor');
-let confirmar = confirm('Bienvedidx ' + nombre);
-
-//algoritmo
-
-let categoria = prompt('¿Qué categoría quieres escoger?: \n Remeras \n Buzos \n Tazas \n Gorrxs');
-switch (categoria) {
-    case 'Remeras':
-        alert('Elegiste la sección Remeras')
-        break;
-    case 'Buzos':
-        alert('Elegiste la sección Buzos')
-        break;
-    case 'Tazas':
-        alert('Elegiste la sección Tazas')
-        break;
-    case 'Gorrxs':
-        alert('Elegiste la sección Gorrxs')
-        break;
-    default:
-        alert('No escogiste ninguna categoría')
-        break;
+class Producto {
+    constructor(nombre, sku, linea, precio, stock, descripcion) {
+        this.nombre = nombre;
+        this.sku = sku;
+        this.linea = linea;
+        this.precio = precio;
+        this.stock = stock;
+        this.descripcion = descripcion;
+    }
 }
 
-//funcion
+//array de productos dinamico
 
-function carrito() {
-    const rem = prompt("¿Cuántos artículos de color negro quieres llevar?");
-    const remdos = prompt('¿Cuántos artículos de color blanco quieres llevar?');
-    return ('Se han añadido al carrito ' + rem + ' articulos negros y ' + remdos + ' articulos blancos');
+//array de productos base
+
+const productosBase = [
+    { nombre: "Remera Tokio", sku: "1001", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
+    { nombre: "Remera Japan", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
+    { nombre: "Remera Hawaii", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
+    { nombre: "Remera Asia", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
+    { nombre: "Remera Vietnam", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
+    { nombre: "Remera Egipto", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
+]
+
+//guardar cosas en localstorage
+
+const productos = JSON.parse(localStorage.getItem("productos")) || []
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+const pedidos = JSON.parse(localStorage.getItem("pedidos")) || []
+
+// agregar productos
+
+const agregarProducto = ({ nombre, sku, linea, precio, stock, descripcion }) => {
+
+    if (productos.some(prod => prod.sku === sku)) {
+        console.warn("Ya existe un producto con ese sku")
+    } else {
+        const productoNuevo = new Producto(nombre, sku, linea, precio, stock, descripcion)
+        productos.push(productoNuevo)
+        //guarda el nuevo array de productos
+        localStorage.setItem('productos', JSON.stringify(productos))
+    }
 }
-console.log(carrito())
+
+const productosDExistentes = () => {
+    if (productos.length === 0) {
+        productosBase.forEach(prod => {
+            let dato = JSON.parse(JSON.stringify(prod))
+            agregarProducto(dato)
+        }
+        )
+    }
+}
+
+const totalCarrito = () => {
+    let total = carrito.reduce((acumulador, { precio, cantidad }) => {
+        return acumulador + (precio * cantidad)
+    }, 0)
+    return total
+}
+const totalCarritoR = () => {
+    const carritoTotal = document.getElementById("carritoTotal")
+    carritoTotal.innerHTML = `Precio total: $ ${totalCarrito()}`
+}
+
+const agregarCarrito = (objetoCarrito) => {
+    carrito.push(objetoCarrito)
+    totalCarritoR()
+}
