@@ -2,43 +2,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@300&display=swap");
-.starlight, .tittle, #barra {
+
+.starlight,
+.tittle,
+#barra {
   color: #AE9B8C;
   font-family: 'babylonica', cursive;
-  text-align: center; }
+  text-align: center;
+}
 
-.guias, .contact_form input, .contact_form textarea, .contact_form button {
+.guias,
+.contact_form input,
+.contact_form textarea,
+.contact_form button {
   border-style: solid;
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .tittle {
   font-size: 70px;
   background-color: black;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .navbar {
-  background-color: #AE9B8C; }
+  background-color: #AE9B8C;
+}
 
 .nav-link {
   transform: scale(1);
-  transition: 0.4s ease; }
+  transition: 0.4s ease;
+}
 
 .nav-link:hover {
   transform: scale(1.2);
-  transition: all 0.4s ease; }
+  transition: all 0.4s ease;
+}
 
 @media screen and (max-width: 800px) {
   .nav-link {
     transform: scale(0.9);
-    transition: 0.4s ease; }
+    transition: 0.4s ease;
+  }
+
   .nav-link:hover {
     transform: scale(1);
-    transition: 0.4s ease; } }
+    transition: 0.4s ease;
+  }
+}
 
 #barra {
   background-color: black;
   font-size: 90px;
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 @media screen and (max-width: 800px) {
   #barra {
@@ -47,22 +64,28 @@
     font-family: 'babylonica', cursive;
     text-align: center;
     font-size: 50px;
-    margin-top: 0; } }
+    margin-top: 0;
+  }
+}
 
 .row {
-  text-align: center; }
+  text-align: center;
+}
 
 .card-body {
-  background-color: black; }
+  background-color: black;
+}
 
 .card-title {
   text-decoration: none;
   font-family: 'Caveat', sans-serif;
-  font-size: 3vh; }
+  font-size: 5vh;
+}
 
 .footer {
   background-color: black;
-  color: #AE9B8C; }
+  color: #AE9B8C;
+}
 
 .footer {
   width: 100%;
@@ -70,22 +93,27 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 50px;
-  padding: 20px 0px; }
+  padding: 20px 0px;
+}
 
 .links {
   text-decoration: none;
-  color: #AE9B8C; }
+  color: #AE9B8C;
+}
 
 @media screen and (max-width: 800px) {
   .footer {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
-    padding: 10px 0px; } }
+    padding: 10px 0px;
+  }
+}
 
 body {
   background-image: url(../img/logos/aber.png);
-  background-repeat: repeat; }
+  background-repeat: repeat;
+}
 
 .contact_form {
   width: 600px;
@@ -95,20 +123,91 @@ body {
   padding-top: 30px;
   padding-bottom: 20px;
   background-color: black;
-  padding-left: 30px; }
+  padding-left: 30px;
+}
+
+.contact_form input {
+  background-color: #fbfbfb;
+  width: 408px;
+  height: 40px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #AE9B8C;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  float: center;
+}
+
+.contact_form textarea {
+  background-color: #fbfbfb;
+  width: 405px;
+  height: 150px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  float: center;
+}
+
+.contact_form label {
+  display: block;
+  text-align: center;
+}
+
+.contact_form button {
+  height: auto;
+  width: 550px;
+  background-color: #AE9B8C;
+  border-color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.contact_form button p {
+  color: #820E11;
+  font-size: 40px;
+  font-family: 'Caveat', cursive;
+  margin: auto;
+  padding: 0%;
+}
+
+.contact_form p {
+  font-size: 30px;
+  color: #AE9B8C;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+}
+
+@media screen and (max-width: 800px) {
+  .contact_form {
+    width: 100%;
+  }
+
+  .contact_form button {
+    width: 95%;
+  }
+
   .contact_form input {
     background-color: #fbfbfb;
-    width: 408px;
+    border-style: solid;
+    margin-top: 10px;
+    width: 300px;
     height: 40px;
     border-radius: 5px;
     border-width: 1px;
     border-color: #AE9B8C;
     padding-left: 10px;
     margin-bottom: 20px;
-    float: center; }
+    float: center;
+  }
+
   .contact_form textarea {
     background-color: #fbfbfb;
-    width: 405px;
+    border-style: solid;
+    margin-top: 10px;
+    width: 300px;
     height: 150px;
     border-radius: 5px;
     border-width: 1px;
@@ -116,56 +215,84 @@ body {
     padding-left: 10px;
     margin-bottom: 20px;
     padding-top: 15px;
-    float: center; }
-  .contact_form label {
-    display: block;
-    text-align: center; }
-  .contact_form button {
-    height: auto;
-    width: 550px;
-    background-color: #AE9B8C;
-    border-color: black;
-    border-radius: 10px;
-    cursor: pointer; }
-  .contact_form button p {
-    color: #820E11;
-    font-size: 40px;
-    font-family: 'Caveat', cursive;
-    margin: auto;
-    padding: 0%; }
-  .contact_form p {
-    font-size: 30px;
-    color: #AE9B8C;
-    text-align: center;
-    font-family: 'Caveat', cursive; }
+    float: center;
+  }
+}
 
-@media screen and (max-width: 800px) {
-  .contact_form {
-    width: 100%; }
-    .contact_form button {
-      width: 95%; }
-    .contact_form input {
-      background-color: #fbfbfb;
-      border-style: solid;
-      margin-top: 10px;
-      width: 300px;
-      height: 40px;
-      border-radius: 5px;
-      border-width: 1px;
-      border-color: #AE9B8C;
-      padding-left: 10px;
-      margin-bottom: 20px;
-      float: center; }
-    .contact_form textarea {
-      background-color: #fbfbfb;
-      border-style: solid;
-      margin-top: 10px;
-      width: 300px;
-      height: 150px;
-      border-radius: 5px;
-      border-width: 1px;
-      border-color: black;
-      padding-left: 10px;
-      margin-bottom: 20px;
-      padding-top: 15px;
-      float: center; } }
+.navbar2-logo {
+  font-family: 'font-family: ' babylonica', cursive;', sans-serif;
+  font-size: 15px;
+  color: black;
+}
+
+.ver-carrito {
+  font-size: 35px;
+  text-align: center;
+}
+
+/*product cards*/
+
+.shop-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: "Noto", sans-serif;
+}
+
+.card>img {
+  width: 90%;
+  height: 250px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.modal-container>.modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+}
+
+.modal-container > div > img{
+  height: 120px;
+  width: 120px;
+}
+
+.total-content{
+  font-size: 25px;
+  padding:20px;
+  text-align: center;
+  padding-top: 20px;
+  
+}

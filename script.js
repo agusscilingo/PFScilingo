@@ -1,69 +1,76 @@
-class Producto {
-    constructor(nombre, sku, linea, precio, stock, descripcion) {
-        this.nombre = nombre;
-        this.sku = sku;
-        this.linea = linea;
-        this.precio = precio;
-        this.stock = stock;
-        this.descripcion = descripcion;
+const shopContent = document.getElementById("shopContent");
+const verCarrito = document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modal-container");
+
+let carrito = [];
+
+productos.forEach((product) => {
+    let content = document.createElement("div");
+    content.className = "card";
+    content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p class="price">${product.precio}</p>
+    `;
+
+    shopContent.append(content);
+
+    let comprar = document.createElement("button")
+    comprar.innerText = "Comprar";
+    comprar.className = "comprar";
+
+    content.append(comprar);
+
+    comprar.addEventListener("click", () => {
+        carrito.push({
+            id: product.id,
+            img: product.img,
+            nombre: product.nombre,
+            precio: product.precio,
+            linea: product.linea,
+            descripcion: product.descripcion,
+        });
     }
-}
+    )
+});
 
-//array de productos dinamico
+verCarrito.addEventListener("click", () => {
+    modalContainer.innerHTML = "";
+    modalContainer.style.display = "block";
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header"
+    modalHeader.innerHTML = `
+    <h1 class="modal-header-tittle">Carrito</h1>
+    `;
 
-//array de productos base
+    modalContainer.append(modalHeader);
 
-const productosBase = [
-    { nombre: "Remera Tokio", sku: "1001", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
-    { nombre: "Remera Japan", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
-    { nombre: "Remera Hawaii", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
-    { nombre: "Remera Asia", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
-    { nombre: "Remera Vietnam", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
-    { nombre: "Remera Egipto", sku: "1002", linea: "Remeras", precio: 8500, descripcion: "Remera 100% algodón overzise" },
-]
+    const modalbutton = document.createElement("h1");
+    modalbutton.innerText = "x";
+    modalbutton.className = "modal-header-button";
 
-//guardar cosas en localstorage
+    modalbutton.addEventListener("click", ()=> {
+        modalContainer.style.display = "none";
+    });
 
-const productos = JSON.parse(localStorage.getItem("productos")) || []
-let carrito = JSON.parse(localStorage.getItem("carrito")) || []
-const pedidos = JSON.parse(localStorage.getItem("pedidos")) || []
+    modalHeader.append(modalbutton);
 
-// agregar productos
+    carrito.forEach((product) => {
+        let carritoContent = document.createElement("div")
+        carrito.className = "modal-content"
+        carritoContent.innerHTML = `
+         <img src="${product.img}">
+         <h3>${product.nombre}</h3>
+         <p>${product.precio} $</p>
+    `;
 
-const agregarProducto = ({ nombre, sku, linea, precio, stock, descripcion }) => {
+    modalContainer.append(carritoContent);
+    })
+    const total = carrito.reduce((acc,el)=> acc + el.precio, 0);
 
-    if (productos.some(prod => prod.sku === sku)) {
-        console.warn("Ya existe un producto con ese sku")
-    } else {
-        const productoNuevo = new Producto(nombre, sku, linea, precio, stock, descripcion)
-        productos.push(productoNuevo)
-        //guarda el nuevo array de productos
-        localStorage.setItem('productos', JSON.stringify(productos))
-    }
-}
+    const totalcompra = document.createElement("div")
+    totalcompra.className = "total-content"
+    totalcompra.innerHTML = `Total a pagar: $ ${total}`;
+    modalContainer.append(totalcompra);
 
-const productosDExistentes = () => {
-    if (productos.length === 0) {
-        productosBase.forEach(prod => {
-            let dato = JSON.parse(JSON.stringify(prod))
-            agregarProducto(dato)
-        }
-        )
-    }
-}
-
-const totalCarrito = () => {
-    let total = carrito.reduce((acumulador, { precio, cantidad }) => {
-        return acumulador + (precio * cantidad)
-    }, 0)
-    return total
-}
-const totalCarritoR = () => {
-    const carritoTotal = document.getElementById("carritoTotal")
-    carritoTotal.innerHTML = `Precio total: $ ${totalCarrito()}`
-}
-
-const agregarCarrito = (objetoCarrito) => {
-    carrito.push(objetoCarrito)
-    totalCarritoR()
-}
+})
