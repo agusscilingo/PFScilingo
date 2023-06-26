@@ -2,7 +2,7 @@ const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 productos.forEach((product) => {
     let content = document.createElement("div");
@@ -49,7 +49,7 @@ verCarrito.addEventListener("click", () => {
     modalbutton.innerText = "x";
     modalbutton.className = "modal-header-button";
 
-    modalbutton.addEventListener("click", ()=> {
+    modalbutton.addEventListener("click", () => {
         modalContainer.style.display = "none";
     });
 
@@ -61,16 +61,25 @@ verCarrito.addEventListener("click", () => {
         carritoContent.innerHTML = `
          <img src="${product.img}">
          <h3>${product.nombre}</h3>
-         <p>${product.precio} $</p>
-    `;
+         <p>${product.precio}$</p>
+        `;
 
-    modalContainer.append(carritoContent);
+        modalContainer.append(carritoContent);
     })
-    const total = carrito.reduce((acc,el)=> acc + el.precio, 0);
+    const total = carrito.reduce((acc, el) => acc + el.precio, 0);
 
     const totalcompra = document.createElement("div")
     totalcompra.className = "total-content"
     totalcompra.innerHTML = `Total a pagar: $ ${total}`;
     modalContainer.append(totalcompra);
 
+
+    saveLocal();
 })
+
+const saveLocal = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+
+JSON.parse(localStorage.getItem("carrito"));

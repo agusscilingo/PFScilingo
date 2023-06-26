@@ -239,6 +239,7 @@ body {
   margin-top: 30px;
   margin-left: 80px;
   margin-right: 80px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -250,8 +251,8 @@ body {
 }
 
 .card>img {
-  width: 90%;
-  height: 250px;
+  width: 100%;
+  height: 400px;
 }
 
 .price {
@@ -263,7 +264,7 @@ body {
   border: none;
   outline: 0;
   padding: 12px;
-  color: white;
+  color: #AE9B8C;
   background-color: black;
   text-align: center;
   cursor: pointer;
@@ -275,8 +276,46 @@ body {
   opacity: 0.7;
 }
 
-.modal-container>.modal-content {
+/*carrito*/
+
+.modal-container {
+  width: 80%;
+  margin: 0 10%;
+  max-height: 88vh;
+  color: #AE9B8C;
+  background-color: black;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
+}
+
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: #AE9B8C;
+  width: 100%;
+}
+
+.modal-header-tittle{
+  justify-self: start;
+}
+
+.modal-header-button {
+  cursor: pointer;
+}
+
+.modal-content {
+  display: block;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -284,15 +323,16 @@ body {
   margin: 10px;
 }
 
-.modal-container > div > img{
-  height: 120px;
-  width: 120px;
+.modal-container>div>img {
+  height: 50px;
+  width: 50px;
 }
 
-.total-content{
+.total-content {
   font-size: 25px;
-  padding:20px;
+  padding: 20px;
   text-align: center;
   padding-top: 20px;
-  
+  color:#AE9B8C;
+  font-family: 'Noto', sans-serif;
 }
