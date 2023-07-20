@@ -55,10 +55,11 @@
                         </li>
                 </span>
                 <!-- carrito -->
-                
+
                 <div class="nav-container">
                     <nav class="navbar2">
-                        <h1 class="ver-carrito" id="verCarrito">🛒</h1>
+                        <h1 class="ver-carrito" id="verCarrito">🛒 <span id="cantidadCarrito"
+                                class="cantidad-carrito"></span></h1>
 
                     </nav>
                 </div>
@@ -82,7 +83,7 @@
 
     <!-- container -->
 
-    <div id="modal-container" class="carritoCompleto"></div>
+    <div id="modal-container" class="modal-container"></div>
 
 
 
@@ -117,9 +118,12 @@
         </div>
     </footer>
 
-    <script src="../products.js"></script>
-    <script src="../script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JavaScript/script.js"></script>
+    <script src="../JavaScript/carrito.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    
 
 
 </body>

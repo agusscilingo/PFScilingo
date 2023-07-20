@@ -278,6 +278,7 @@ body {
 
 /*carrito*/
 
+
 .modal-container {
   width: 80%;
   margin: 0 10%;
@@ -285,9 +286,10 @@ body {
   color: #AE9B8C;
   background-color: black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
+  flex-direction:column;
+  align-items:center;
+  /*top*/
+  position:fixed;
   overflow: auto;
   z-index: 9;
   top: 12vh;
@@ -299,14 +301,14 @@ body {
 }
 
 .modal-header {
-  display: flex;
+  display:flex;
   justify-content: space-around;
   background-color: black;
   color: #AE9B8C;
   width: 100%;
 }
 
-.modal-header-tittle{
+.modal-header-tittle {
   justify-self: start;
 }
 
@@ -314,8 +316,8 @@ body {
   cursor: pointer;
 }
 
-.modal-content {
-  display: block;
+.modal-container > .modal-content {
+  display:flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -324,8 +326,8 @@ body {
 }
 
 .modal-container>div>img {
-  height: 50px;
-  width: 50px;
+  height: 120px;
+  width: 120px;
 }
 
 .total-content {
@@ -333,6 +335,36 @@ body {
   padding: 20px;
   text-align: center;
   padding-top: 20px;
-  color:#AE9B8C;
+  color: #AE9B8C;
   font-family: 'Noto', sans-serif;
+}
+
+/*borrar*/
+
+.borrar-producto {
+  cursor: pointer;
+}
+
+/*contador carrito*/
+
+.cantidad-carrito {
+  background-color: #820E11;
+  color: #AE9B8C;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 37px;
+  right: 14px;
+  position: absolute;
+  display: flex;
+}
+
+/*botones suma y rsta*/
+
+.sumar {
+  cursor: pointer;
+}
+
+.restar {
+  cursor: pointer;
 }
